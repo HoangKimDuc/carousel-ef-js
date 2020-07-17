@@ -8,6 +8,7 @@ export default class Carousel {
         this.options = options
         this.currentIndex = 0
         this.oldIndex = 0
+
         this.container = make(
             "div", [this.CSS.container], {},
         )
@@ -31,6 +32,9 @@ export default class Carousel {
         }
     }
     render() {
+        // set width
+        this.container.style.width = this.options.width || "100%"
+        // 
         this.el.appendChild(this.container)
         this.items = this.data.map((item, index) => {
             let itemEl
@@ -69,7 +73,6 @@ export default class Carousel {
                                     style: `
                                 width: ${width}px;
                                 height:100%;
-                                background-color:${item.color};
                                 background-image: url(${item.img});
                                 background-size: ${this.container.clientWidth}px 100%;
                                 background-position: ${-width * index}px 0px;
@@ -115,7 +118,6 @@ export default class Carousel {
                                     style: `
                                 width: ${width}px;
                                 height: ${height}px;
-                                background-color:${item.color};
                                 background-image: url(${item.img});
                                 background-size: ${this.container.clientWidth}px ${this.container.clientHeight}px;
                                 background-position: ${-width * index}px ${-height * Math.floor(index / columns)}px;
@@ -165,7 +167,6 @@ export default class Carousel {
                 default:
                     itemEl = make("div", [this.CSS.itemWrap, index === this.currentIndex ? 'active' : ''], {
                         style: `
-                        background-color: ${item.color};
                         background-image: url(${item.img});
                         background-size: 100% 100%
                         `

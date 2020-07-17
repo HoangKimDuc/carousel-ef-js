@@ -4,10 +4,43 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
-    <carousel-ef-js></carousel-ef-js>
+    <carousel-ef-js :items="items" :options="options"></carousel-ef-js>
     <!-- <router-view /> -->
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    options: {
+      // duration: .5, // default
+      // width: "100%", // default  ("wpx" or "w%")
+    },
+    items: [
+      {
+        img: "/images/img1.jpg",
+        type: "type1"
+      },
+      {
+        img: "/images/img2.jpg",
+        type: "type2"
+      },
+      {
+        img: "/images/img3.jpg",
+        type: "type3"
+      },
+      {
+        img: "/images/img4.jpg",
+        type: "type4"
+      },
+      {
+        img: "/images/img5.jpg",
+        type: "type5"
+      },
+    ],
+  }),
+}
+</script>
 
 <style lang="scss">
 #app {

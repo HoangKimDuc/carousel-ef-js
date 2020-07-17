@@ -66,7 +66,8 @@ export default class Carousel {
 
                                 let width = this.container.clientWidth / numPart
                                 return make("div", [this.CSS.type2Item], {
-                                    style: `width: ${width}px;
+                                    style: `
+                                width: ${width}px;
                                 height:100%;
                                 background-color:${item.color};
                                 background-image: url(${item.img});
@@ -85,7 +86,6 @@ export default class Carousel {
                 case "type3":
                     itemEl = make("div", [this.CSS.itemWrap, index === this.currentIndex ? 'active' : ''], {
                         style
-
                     },
                         make("div", [this.CSS.type3Item], {
                             style: `
@@ -112,7 +112,8 @@ export default class Carousel {
 
                                 let width = this.container.clientWidth / columns
                                 return make("div", [this.CSS.type4Item], {
-                                    style: `width: ${width}px;
+                                    style: `
+                                width: ${width}px;
                                 height: ${height}px;
                                 background-color:${item.color};
                                 background-image: url(${item.img});
@@ -163,10 +164,10 @@ export default class Carousel {
                     break
                 default:
                     itemEl = make("div", [this.CSS.itemWrap, index === this.currentIndex ? 'active' : ''], {
-                        style: `background-color: ${item.color};
+                        style: `
+                        background-color: ${item.color};
                         background-image: url(${item.img});
                         background-size: 100% 100%
-                        
                         `
                     })
                     break

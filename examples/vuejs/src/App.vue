@@ -15,6 +15,7 @@ export default {
     options: {
       // duration: .5, // default
       // width: "100%", // default  ("wpx" or "w%")
+      // index: 0, // default
     },
     items: [
       {

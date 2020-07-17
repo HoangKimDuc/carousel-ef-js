@@ -35,13 +35,15 @@ export default class Carousel {
         // set width
         this.container.style.width = this.options.width || "100%"
         // 
+        let duration = this.options.duration || .5
+        this.currentIndex = this.options.index || 0
+        //
         this.el.appendChild(this.container)
         this.items = this.data.map((item, index) => {
             let itemEl
             // 
             let zIndex = index === this.currentIndex ? this.data.length + 3 : 1
             let style = `z-index: ${zIndex}`
-            let duration = this.options.duration || .5
             switch (item.type) {
                 case "type1":
                     itemEl = make("div", [this.CSS.itemWrap, index === this.currentIndex ? 'active' : ''], {

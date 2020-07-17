@@ -1,0 +1,97 @@
+$btn-size: 40;
+$btn-half-size: $btn-size/2;
+.kd-container{
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: #ccc;
+    user-select: none;
+    overflow: hidden;
+    .kd-items{
+        .kd-item-wrap{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        // display: none;
+            &.active, &.old{
+                // display: block!important;
+            
+                .kd-type1-item{
+                    opacity: 1;
+                }
+                .kd-type2-item{
+                    transform: rotateY(0deg);
+                }
+                .kd-type3-item{
+                    transform: translateX(0);
+                }
+                .kd-type4-item{
+                    opacity: 1;
+                }
+                .kd-type5-item.left{
+                    transform: translateX(-110%);
+                    
+                }
+                .kd-type5-item.right{
+                    transform: translateX(110%);
+                }
+            }
+            .kd-type1-item{
+                display: inline-block;
+                opacity: 0;
+            }
+            .kd-type2-item{
+                display: inline-block;
+                transform: rotateY(-90deg);
+                transform-origin: left;
+            }
+            .kd-type3-item{
+                display: inline-block;
+                transform: translateX(110%);
+                
+            }
+            .kd-type4-item{
+                display: inline-block;
+                opacity: 0;
+            }
+            .kd-type5-item{
+                display: inline-block;
+                position: absolute;
+                top: 0;
+            }
+            .kd-type5-item.right{
+                left: 50%;
+                transform: translateX(0);
+
+            }
+            .kd-type5-item.left{
+                left: 0;
+                transform: translateX(0);
+
+            }
+        }
+    }
+    .kd-btn{
+        position: absolute;
+        z-index: 999;
+        width: $btn-size + 0px;
+        height: $btn-size+ 0px;
+        top: calc(50% - #{$btn-half-size + 0px});
+        border: 2px solid #333;
+        // 
+        background-color: rgba($color: #000000, $alpha: .5);
+        font-size: 30px;
+        font-weight: 900;
+        cursor: pointer;
+        &.kd-btn-left{
+            left: 0;
+        }
+        &.kd-btn-right{
+            right: 0;
+        }
+    }
+}
